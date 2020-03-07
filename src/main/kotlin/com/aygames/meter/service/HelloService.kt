@@ -3,7 +3,9 @@ package com.aygames.meter.service
 import com.aygames.meter.HelloServiceGrpc
 import com.aygames.meter.HelloServiceOuterClass
 import io.grpc.stub.StreamObserver
+import org.lognet.springboot.grpc.GRpcService
 
+@GRpcService
 class HelloServiceImpl : HelloServiceGrpc.HelloServiceImplBase() {
     override fun hello(
         request: HelloServiceOuterClass.HelloRequest,

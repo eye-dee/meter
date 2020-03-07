@@ -25,13 +25,10 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation ("io.github.lognet:grpc-spring-boot-starter:3.5.2")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("io.grpc:grpc-netty:1.16.1")
-    implementation("io.grpc:grpc-protobuf:1.16.1")
-    implementation("io.grpc:grpc-stub:1.16.1")
 
     testCompile("io.projectreactor:reactor-test")
     testCompile("org.springframework.boot:spring-boot-starter-test")
