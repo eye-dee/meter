@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.aygames.meter;
+
+message UserRequest {
+    string name = 1;
+    string email = 2;
+}
+
+message UserResponse {
+    string status = 1;
+}
+
+service UserService {
+    rpc start(UserRequest) returns (UserResponse);
+}

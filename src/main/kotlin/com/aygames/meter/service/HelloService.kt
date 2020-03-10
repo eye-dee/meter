@@ -6,7 +6,7 @@ import io.grpc.stub.StreamObserver
 import org.lognet.springboot.grpc.GRpcService
 
 @GRpcService
-class HelloServiceImpl : HelloServiceGrpc.HelloServiceImplBase() {
+class HelloService : HelloServiceGrpc.HelloServiceImplBase() {
     override fun hello(
         request: HelloServiceOuterClass.HelloRequest,
         responseObserver: StreamObserver<HelloServiceOuterClass.HelloResponse?>
