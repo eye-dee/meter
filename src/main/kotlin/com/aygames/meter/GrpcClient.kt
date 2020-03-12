@@ -15,8 +15,18 @@ object GrpcClient {
                 .setLastName("Big")
                 .build()
         )
-        channel.shutdown()
+        println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        val userServiceFutureStub = UserServiceGrpc.newFutureStub(channel)
+        val userResponse = userServiceFutureStub
+            .start(
+                UserServiceOuterClass.UserRequest.newBuilder()
+                    .setEmail("aaa@aaa.com")
+                    .setName("aaaaaasas").build()
+            ).get()
 
+
+        channel.shutdown()
         println(helloResponse.greeting)
+        println(userResponse.status)
     }
 }
