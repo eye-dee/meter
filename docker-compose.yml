@@ -12,4 +12,4 @@ services:
     ports:
     - 6565:6565
     environment:
-      MONGO: mongo
+      MONGO_URI: mongodb://localhost:27017/meter
