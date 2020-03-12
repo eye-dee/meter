@@ -5,3 +5,7 @@ services:
     image: mongo
     ports:
       - 27017:27017
+  meter:
+    image: aygamesco/meter:latest
+    ports:
+    - 6565:6565

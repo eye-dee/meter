@@ -4,6 +4,7 @@ import com.google.protobuf.gradle.ofSourceSet
 import com.google.protobuf.gradle.plugins
 import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
+import com.bmuschko.gradle.docker.tasks.image.*
 
 plugins {
     val kotlinVersion = "1.3.70"
@@ -13,6 +14,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.jpa") version kotlinVersion
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     id("com.google.protobuf") version "0.8.8"
+    id("com.bmuschko.docker-remote-api") version "6.1.4"
 }
 
 group = "org.example"
@@ -75,4 +77,9 @@ protobuf {
             }
         }
     }
+}
+
+tasks.create("buildImage", DockerBuildImage::class) {
+    inputDir.set(file("./"))
+    images.add("aygamesco/meter:latest")
 }
