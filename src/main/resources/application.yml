@@ -3,4 +3,6 @@ grpc:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/meter
+      uri: mongodb://${MONGO:localhost}:27017/meter
+      password: ${PASSWROD}
+      username: ${USERNAME}
